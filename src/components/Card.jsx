@@ -1,7 +1,7 @@
 import React from "react";
-import { Card } from  'react-bootstrap' ;
+import { Card, Button } from  'react-bootstrap' ;
 
-const Card = () => {
+const SingleCard = () => {
   return (
     <div>
       <Card style={{ width: "18rem" }}>
@@ -18,4 +18,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default SingleCard;
