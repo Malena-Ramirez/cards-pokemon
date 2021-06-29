@@ -1,12 +1,13 @@
 import React from "react";
-import Card from "./Card.jsx";
+import SingleCard from "./SingleCard.jsx";
+
 
 const CardsContainer = () => {
   return (
     <>
       <h1>Pokemon</h1>
       <div>
-        <Card />
+        <SingleCard/>
       </div>
     </>
   );
