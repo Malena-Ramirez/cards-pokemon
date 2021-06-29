@@ -1,13 +1,12 @@
 import React from "react";
 import SingleCard from "./SingleCard.jsx";
 
-
-const CardsContainer = () => {
+const CardsContainer = (props) => {
   return (
     <>
       <h1>Pokemon</h1>
       <div>
-        <SingleCard/>
+        <SingleCard onClick={props.onClick} />
       </div>
     </>
   );
