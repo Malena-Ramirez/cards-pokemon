@@ -1,8 +1,8 @@
 import React , { useEffect, useState } from "react";
-import Card from "./Card.jsx";
+import SingleCard from "./SingleCard.jsx";
 
 
-const CardsContainer = () => {
+const CardsContainer = (props) => {
   const [pokemons,setPokemons] = useState([])
 
     useEffect(() => {
@@ -36,8 +36,8 @@ const CardsContainer = () => {
       <div>
       {pokemons.length === 0 
       ? <h3>Loading Pokemons</h3> 
-      :pokemons.map(el => <Card
-      key={el.id} name={el.name} img={el.img} abilities={el.abilities} exp={el.experience}/>)
+      :pokemons.map(el => <SingleCard
+      key={el.id} name={el.name} img={el.img} abilities={el.abilities} exp={el.experience} onClick={props.onClick}/>)
       }
       </div>
     </>

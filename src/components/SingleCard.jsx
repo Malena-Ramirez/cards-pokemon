@@ -5,11 +5,11 @@ const SingleCard = (props) => {
   return (
     <div>
       <Card border="warning" className="single_card bg-light text-center" style={{ width: "18rem" }}>
-        <Card.Img avariant="top" src="https://via.placeholder.com/150" />
+        <Card.Img avariant="top" src={props.img} />
         <Card.Body>
-          <Card.Title>Pokemon </Card.Title>
+          <Card.Title>{props.name}</Card.Title>
           <Card.Text>
-            <p>Nombre</p>
+            <p>{props.name}</p>
           </Card.Text>
           <Button variant="btn btn-info" onClick={props.onClick}>
             Ver mas
