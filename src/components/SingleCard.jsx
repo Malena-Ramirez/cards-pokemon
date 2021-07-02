@@ -11,7 +11,7 @@ const SingleCard = (props) => {
           <Card.Text>
             <p>{props.name}</p>
           </Card.Text>
-          <Button variant="btn btn-info" onClick={props.onClick}>
+          <Button variant="btn btn-info" onClick={props.onClick} id={props.id}>
             Ver mas
           </Button>
         </Card.Body>
