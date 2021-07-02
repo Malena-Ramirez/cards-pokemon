@@ -5,14 +5,16 @@ const CardDetail = (props) => {
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">Nombre pokemon</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">{props.pokemon.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Container>
           <Row>
-            <Image src="https://via.placeholder.com/350X150" fluid />
+            <Image src={props.pokemon.img} fluid />
           </Row>
-          <Row>texto</Row>
+          <Row>
+            Habilidades: {props.pokemon.abilities}. Experiencia: {props.pokemon.experience}
+          </Row>
         </Container>
       </Modal.Body>
       <Modal.Footer>

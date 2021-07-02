@@ -8,9 +8,7 @@ const SingleCard = (props) => {
         <Card.Img avariant="top" src={props.img} />
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
-          <Card.Text>
-            <p>{props.name}</p>
-          </Card.Text>
+          <Card.Text>{props.name}</Card.Text>
           <Button variant="btn btn-info" onClick={props.onClick} id={props.id}>
             Ver mas
           </Button>

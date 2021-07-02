@@ -5,9 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [modalShow, setModalShow] = useState(false);
   const [pokemons, setPokemons] = useState([]);
+  const [selectedPokemon, setSelectedPokemon] = useState({})
 
   useEffect(() => {
-    const peticion = async (url) => {
+    const getPokemons = async (url) => {
       let res = await fetch(url),
         json = await res.json();
 
@@ -27,19 +28,22 @@ function App() {
       });
     };
 
-    peticion("https://pokeapi.co/api/v2/pokemon/");
+    getPokemons("https://pokeapi.co/api/v2/pokemon/");
   }, []);
 
-
-
-  const handleClick = () => {
+  const handleClick = (e) => {
     setModalShow(true);
+    let id = e.target.id;
+    console.log(id);
+    id = parseInt(id);
+    const Selected = pokemons.find(pokemon => pokemon.id === id);
+    setSelectedPokemon(Selected);
   }
 
   return (
     <>
       <CardsContainer pokemon={pokemons} onClick={handleClick} />
-      <CardDetail show={modalShow}
+      <CardDetail pokemon={selectedPokemon} show={modalShow}
         onHide={() => setModalShow(false)} />
     </>
   );
